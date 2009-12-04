@@ -4,7 +4,7 @@ Summary:	grep-like tool
 Summary(pl.UTF-8):	produkt grepopodobny
 Name:		ack
 Version:	1.90
-Release:	0.1
+Release:	1
 License:	GPL
 Group:		Applications
 Source0:	http://betterthangrep.com/ack-standalone
