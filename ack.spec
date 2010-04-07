@@ -1,3 +1,5 @@
+# TODO:
+# - split /usr/share/perl* part into perl-ack subpackage
 #
 # Conditional build:
 %bcond_without	tests		# do not perform "make test"
