@@ -8,7 +8,7 @@
 %define	pdir	ack
 Summary:	grep-like text finder
 Summary(pl.UTF-8):	produkt grepopodobny
-Name:		perl-ack
+Name:		ack
 Version:	1.92
 Release:	1
 License:	GPL v1+ or Artistic
@@ -21,7 +21,6 @@ BuildRequires:	perl-File-Next
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	perl-perldoc
 BuildRequires:	rpm-perlprov >= 4.1-13
-Obsoletes:	perl-ack
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -42,6 +41,17 @@ programistów pracujących z dużymi drzewami różnorodnych plików.
 
 ack jest napisane w czystym Perlu i korzysta z ptęgi wyrażeń
 regularnych języka Perl.
+
+%package -n perl-ack
+Summary:	ack perl library
+Summary(pl.UTF-8):	biblioteka ack dla języka perl
+Group:		Development/Languages/Perl
+
+%description -n perl-ack
+ack perl library.
+
+%description -n perl-ack -l pl.UTF-8
+ack perl library.
 
 %prep
 %setup -q -n %{pdir}-%{version}
@@ -68,6 +78,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc Changes README TODO ack-help.txt ack-help-types.txt
 %attr(755,root,root) %{_bindir}/ack
+%{_mandir}/man1/ack.1p*
+
+%files -n perl-ack
+%defattr(644,root,root,755)
 %{perl_vendorlib}/App/Ack.pm
 %{perl_vendorlib}/App/Ack
-%{_mandir}/man1/ack.1p*
