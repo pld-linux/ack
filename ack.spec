@@ -10,7 +10,7 @@ Summary:	grep-like text finder
 Summary(pl.UTF-8):	produkt grepopodobny
 Name:		ack
 Version:	1.92
-Release:	1
+Release:	2
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-authors/id/P/PE/PETDANCE/ack-%{version}.tar.gz
@@ -21,6 +21,7 @@ BuildRequires:	perl-File-Next
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	perl-perldoc
 BuildRequires:	rpm-perlprov >= 4.1-13
+Requires:	perl-ack = %{version}-%{release}
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
