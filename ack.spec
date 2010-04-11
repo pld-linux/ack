@@ -36,7 +36,7 @@ Ack can also list files that would be searched, without actually
 searching them, to let you take advantage of ack's file-type filtering
 capabilities.
 
-%description -l pld.UTF-8
+%description -l pl.UTF-8
 ack jest narzędziem podobnym do grepa, zaprojektowanym dla
 programistów pracujących z dużymi drzewami różnorodnych plików.
 
