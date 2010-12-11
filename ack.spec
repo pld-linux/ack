@@ -9,19 +9,18 @@
 Summary:	grep-like text finder
 Summary(pl.UTF-8):	produkt grepopodobny
 Name:		ack
-Version:	1.92
-Release:	3
+Version:	1.94
+Release:	1
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-authors/id/P/PE/PETDANCE/ack-%{version}.tar.gz
-# Source0-md5:	c25b5a16d0a27386a75c91d531b86cea
+# Source0-md5:	dcf68e56bab0d394370fa102c7f08cb0
 URL:		http://betterthangrep.com/
 BuildRequires:	perl-File-Next
 %{?with_tests:BuildRequires:	perl-Test-Pod}
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	perl-perldoc
 BuildRequires:	rpm-perlprov >= 4.1-13
-Requires:	perl-ack = %{version}-%{release}
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -77,7 +76,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc Changes README TODO ack-help.txt ack-help-types.txt
+%doc Changes README.markdown TODO ack-help.txt ack-help-types.txt
 %attr(755,root,root) %{_bindir}/ack
 %{_mandir}/man1/ack.1p*
 
