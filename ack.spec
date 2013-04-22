@@ -15,6 +15,7 @@ License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-authors/id/P/PE/PETDANCE/ack-%{version}.tar.gz
 # Source0-md5:	9ae2c3939d0f069c6781ee5b6de47c27
+Patch0:		%{name}-deps.patch
 URL:		http://betterthangrep.com/
 %if %{with tests}
 BuildRequires:	perl-File-Next >= 1.10
@@ -57,6 +58,7 @@ ack perl library.
 
 %prep
 %setup -q -n %{pdir}-%{version}
+%patch0 -p0
 
 %build
 %{__perl} Makefile.PL \
