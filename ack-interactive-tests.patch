@@ -1,0 +1,11 @@
+--- t/Util.pm.orig	2013-04-23 16:50:35.000000000 +0100
++++ t/Util.pm	2013-04-23 16:51:34.000000000 +0100
+@@ -403,7 +403,7 @@
+ BEGIN {
+     my $has_io_pty = eval {
+         require IO::Pty;
+-        1;
++        !exists($ENV{RUN_INTERACTIVE}) || $ENV{RUN_INTERACTIVE};
+     };
+ 
+     sub has_io_pty {

@@ -3,6 +3,7 @@
 #
 # Conditional build:
 %bcond_without	tests		# do not perform "make test"
+%bcond_with	pty_tests	# do not perform tests requiring a pty
 #
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	ack
@@ -13,12 +14,14 @@ Version:	2.02
 Release:	1
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-authors/id/P/PE/PETDANCE/ack-%{version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-authors/id/P/PE/PETDANCE/%{name}-%{version}.tar.gz
 # Source0-md5:	9ae2c3939d0f069c6781ee5b6de47c27
 Patch0:		%{name}-deps.patch
+Patch1:		%{name}-interactive-tests.patch
 URL:		http://betterthangrep.com/
 %if %{with tests}
 BuildRequires:	perl-File-Next >= 1.10
+%{?with_pty_tests:BuildRequires:	perl-IO-Tty}
 BuildRequires:	perl-Test-Simple >= 0.98
 %endif
 BuildRequires:	perl-devel >= 1:5.8.0
@@ -59,6 +62,7 @@ ack perl library.
 %prep
 %setup -q -n %{pdir}-%{version}
 %patch0 -p0
+%patch1 -p0
 
 %build
 %{__perl} Makefile.PL \
@@ -67,7 +71,7 @@ ack perl library.
 	CC="%{__cc}" \
 	OPTIMIZE="%{rpmcflags}"
 
-%{?with_tests:%{__make} -j1 test}
+%{?with_tests:%{!?with_pty_tests: RUN_INTERACTIVE=0} %{__make} -j1 test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
