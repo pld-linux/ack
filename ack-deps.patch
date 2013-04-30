@@ -1,13 +1,11 @@
 --- Ack.pm~	2013-04-19 05:47:53.000000000 +0100
 +++ Ack.pm	2013-04-22 16:50:14.000000000 +0100
-@@ -46,8 +46,8 @@
+@@ -46,7 +46,7 @@
  our $is_cygwin;
  our $is_windows;
  
 -use File::Spec 1.00015 ();
--use File::Glob 1.00015 ':glob';
 +use File::Spec 1.0 ();
-+use File::Glob 1.0 ':glob';
  
  BEGIN {
      # These have to be checked before any filehandle diddling.
