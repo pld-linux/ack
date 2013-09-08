@@ -10,12 +10,12 @@
 Summary:	grep-like text finder
 Summary(pl.UTF-8):	produkt grepopodobny
 Name:		ack
-Version:	2.04
+Version:	2.08
 Release:	1
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-authors/id/P/PE/PETDANCE/%{name}-%{version}.tar.gz
-# Source0-md5:	bfd1b9fc4e79b6cad1c410406e199fe5
+# Source0-md5:	7b10e878c07b84b9fa874eff6e014ef3
 Patch0:		%{name}-deps.patch
 Patch1:		%{name}-interactive-tests.patch
 URL:		http://betterthangrep.com/
