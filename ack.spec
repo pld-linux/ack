@@ -46,8 +46,8 @@ capabilities.
 ack jest narzędziem podobnym do grepa, zaprojektowanym dla
 programistów pracujących z dużymi drzewami różnorodnych plików.
 
-ack jest napisane w czystym Perlu i korzysta z ptęgi wyrażeń
-regularnych języka Perl.
+ack jest napisany w czystym perlu i korzysta z potęgi wyrażeń
+regularnych tego języka.
 
 %package -n perl-ack
 Summary:	ack perl library
