@@ -5,7 +5,6 @@
 %bcond_without	tests		# do not perform "make test"
 %bcond_with	pty_tests	# do not perform tests requiring a pty
 #
-%include	/usr/lib/rpm/macros.perl
 %define	pdir	ack
 Summary:	grep-like text finder
 Summary(pl.UTF-8):	produkt grepopodobny
